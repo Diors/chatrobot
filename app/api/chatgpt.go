@@ -52,6 +52,7 @@ func stream(message string) string {
 }
 
 func CompletionRequest(message string) string {
+	CHATGPT_TOKEN, _ := revel.Config.String("openai.token")
 	client := openai.NewClient(CHATGPT_TOKEN)
 	resp, err := client.CreateChatCompletion(
 		context.Background(),
