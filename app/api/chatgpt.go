@@ -10,11 +10,8 @@ import (
 	"github.com/sashabaranov/go-openai"
 )
 
-const CHATGPT_TOKEN = "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"
-
-//const CHATGPT_TOKEN = "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"
-
 func stream(message string) string {
+	CHATGPT_TOKEN, _ := revel.Config.String("openai.token")
 	c := openai.NewClient(CHATGPT_TOKEN)
 	ctx := context.Background()
 
