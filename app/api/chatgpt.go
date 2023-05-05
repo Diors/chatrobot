@@ -71,7 +71,7 @@ func CompletionRequest(message string) string {
 
 	if err != nil {
 		revel.AppLog.Error("ChatCompletion error: ", err)
-
+		return err.Error()
 	}
 
 	return resp.Choices[0].Message.Content
