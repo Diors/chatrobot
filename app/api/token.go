@@ -38,10 +38,9 @@ func GetToken() string {
 func refreshToken() string {
 	revel.AppLog.Debug("开始刷新飞书app_access_token")
 	posturl := "https://open.feishu.cn/open-apis/auth/v3/app_access_token/internal"
-	body := []byte(`{
-		"app_id": "cli_a4d8741035f8d00d",
-		"app_secret": "vn0yNEDf2XVxLzEWWMfj5fOMOwzcvweN"
-	}`)
+	appid, _ := revel.Config.String("feishu.app.id")
+	appsecret, _ := revel.Config.String("feishu.app.secret")
+	body := []byte(`{"app_id": "` + appid + `","app_secret": "` + appsecret + `"}`)
 
 	r, err := http.NewRequest("POST", posturl, bytes.NewBuffer(body))
 	if err != nil {

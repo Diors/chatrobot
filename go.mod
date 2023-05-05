@@ -15,7 +15,6 @@ require (
 	github.com/coocood/freecache v1.2.3
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/go-stack/stack v1.8.1 // indirect
-	github.com/goccy/go-json v0.10.2
 	github.com/google/uuid v1.3.0
 	github.com/inconshreveable/log15 v0.0.0-20201112154412-8562bdadbbac // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
